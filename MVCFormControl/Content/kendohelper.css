@@ -1,0 +1,226 @@
+﻿
+.k-textbox-date {
+    background: url(images/ical_16X16.png) no-repeat right;
+}
+
+.k-upload-button {
+    background: url(images/uploadbtn.png) no-repeat !important;
+    border: none !important;
+    height: 27px;
+}
+
+    .k-upload-button span {
+        visibility: hidden;
+    }
+
+.form-field .k-dropzone {
+    padding: 0;
+}
+
+.field-uploadimg-box img {
+    border: 1px solid #ccc;
+    width: 90px;
+    height: 90px;
+}
+
+
+
+.k-window {
+    padding-top: 0;
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    overflow: hidden;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    transform: none !important;
+}
+
+.k-window-titlebar.k-header {
+    position: static;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: '宋体';
+    font-weight: bold;
+    background: #ccc;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    height: auto;
+    width: auto;
+    margin-top: 0px;
+    box-sizing: border-box;
+}
+
+.k-window-titlebar .k-window-title {
+    position: static;
+}
+
+.k-window-content.k-content {
+    padding: 15px;
+}
+
+.k-window-footer {
+    text-align: right;
+}
+
+.k-window-checklist {
+    padding: 10px;
+}
+
+.k-form-checklist {
+    width: 400px;
+}
+
+.k-checklist {
+    overflow: hidden;
+}
+
+.k-checklist-tool {
+    text-align: right;
+}
+
+    .k-checklist-tool a {
+        color: #2e2e2e;
+    }
+
+.k-checklist-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.k-checklist-item {
+    display: block;
+    min-width: 110px;
+    float: left;
+    margin-right: 20px;
+}
+
+    .k-checklist-item label {
+        display: inline-block;
+        line-height: 30px;
+        min-width: 90px;
+    }
+
+    .k-checklist-item input {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+
+
+
+
+/***UploadImgList***/
+.field-uploadimg-list {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.img-item {
+    float: left;
+    padding: 5px;
+    position: relative;
+    border: 1px solid #bbb;
+    margin: 10px 10px 0 0;
+    display: none;
+}
+
+    .img-item .k-icon {
+        display: block;
+    }
+
+    .img-item img {
+        width: 120px;
+        height: 100px;
+    }
+
+    .img-item .img-item-close {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        height: 16px;
+        width: 16px;
+        background: #fff;
+        display: block;
+        cursor: pointer;
+    }
+
+    .img-item .img-item-bar {
+        position: absolute;
+        width: 100%;
+        height: 25px;
+        background: #000;
+        opacity: 0.7;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+
+        .img-item .img-item-bar .img-item-sorter-right {
+            display: block;
+            position: absolute;
+            right: 5px;
+            height: 16px;
+            width: 16px;
+            top: 5px;
+            cursor: pointer;
+        }
+
+
+        .img-item .img-item-bar .img-item-sorter-left {
+            display: block;
+            position: absolute;
+            left: 5px;
+            height: 16px;
+            width: 16px;
+            top: 5px;
+            cursor: pointer;
+        }
+
+
+
+.map-container {
+    width: 670px;
+    height: 450px;
+    border: 1px solid gray;
+}
+
+.map-control {
+    position: absolute;
+    display: none;
+    top: 0px;
+    right: 0px;
+    z-index: 200;
+    opacity: 0.7;
+    background: #050505;
+    width: 100%;
+    text-align: right;
+    padding: 3px 0px;
+}
+
+.map-control-content {
+    padding-right: 10px;
+}
+
+.map-keywords {
+    width: 250px;
+}
+
+.map-marker-btn {
+    height: 30px;
+}
+
+.map-marker-icon {
+    background-position: -46px 0;
+    background-image: url('images/mapicon.gif');
+}

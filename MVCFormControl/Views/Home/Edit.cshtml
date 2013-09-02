@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@Html.ActionLink("添加页面", "Index")
+@using (Html.BeginForm())
+{ 
+    @Html.EditorForModel();
+    
+    <div class="form-submit">
+        <button class="btn btn-primary" type="submit">
+            <i class="icon-ok icon-white"></i>提交</button>
+    </div>
+}

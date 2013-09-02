@@ -1,0 +1,32 @@
+@model  string
+
+@{
+    string name = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var data = ViewData["Data_" + name];
+    var values = string.Empty;
+    var value = string.Empty;
+    if (data != null)
+    {
+        values = data.ToString();
+        value = values.Split(',').Last();
+    }
+    
+}
+<div class="form-cascading">
+    @Html.TextBoxFor(m => m, new { tabindex = -1, @class = "field-valid-text" })
+    @Html.Hidden(name + "_values")
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#@name').cascading({
+            read_url: '@Url.Action(name, "ajaxservice")',
+            get_url: '@Url.Action("get_" + name, "ajaxservice")',
+            paramId: 'pid',
+            values: '@values',
+            value: '@Model'
+        });
+    })
+</script>
+
+
+

@@ -1,0 +1,34 @@
+@model  int
+
+@{
+    string name = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    List<string> DropdownListKeys = new List<string>();
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("CascadingSelect"))
+    {
+        DropdownListKeys = ViewData.ModelMetadata.AdditionalValues["CascadingSelect"].ToString().Split('|').ToList();
+        DropdownListKeys.Add(name);
+    }
+   
+}
+@Html.TextBoxFor(m => m)
+
+<script type="text/javascript">
+    $(function () {
+        var cascaQueue = [];
+        @foreach (var s in DropdownListKeys)
+        {
+            <text>
+        cascaQueue.push('@s');
+        </text>
+        }
+        $('#@name').cascadingSelect({
+            cascaQueue: cascaQueue,
+            read_url: '@Url.Action(name, "ajaxservice")',
+            get_url: '@Url.Action("get_" + name, "ajaxservice")',
+            value:@Model
+            });
+    })
+</script>
+
+
+

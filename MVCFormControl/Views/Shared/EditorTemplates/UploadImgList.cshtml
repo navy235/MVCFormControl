@@ -1,0 +1,40 @@
+@model  string
+@{
+    var name = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var uploadIndex = ViewData.ModelMetadata.AdditionalValues["UploadImgList"].ToString();
+    var maxLength = ViewData.ModelMetadata.AdditionalValues["UploadImgListMaxLength"].ToString();
+}
+<div class="field-uploadimg">
+    <div class="field-uploadimg-list" id="@Html.Raw(name + "_list")">
+    </div>
+    @Html.TextBoxFor(m => m, new { tabindex = -1, @class = "field-valid-text" })
+    <div class="img-item" id="@(name + "_template")">
+        <a class="img-item-close" title="É¾³ý"><span class="k-icon k-i-close"></span></a>
+        <img class="@(name + "_img")" src=""  />
+        <div class="img-item-bar">
+            <a class="img-item-sorter img-item-sorter-right" title="ÓÒÒÆ" data-direction="right"><span class="k-icon k-i-arrow-e" data-direction="right"></span></a>
+            <a class="img-item-sorter img-item-sorter-left" title="×óÒÆ" data-direction="left"><span class="k-icon k-i-arrow-w" data-direction="left"></span></a>
+        </div>
+        <input type="hidden" name="@(name + "_imgurl")" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var upvalue;
+        @if (!string.IsNullOrEmpty(Model))
+        {
+            <text>
+        upvalue = '@Model';
+            </text>
+        }
+        jQuery("#@name").uploadImgList({
+            save_url: '@Url.Action("UploadListSave" + uploadIndex, "Upload")',
+            uploadId: 'listattachments',
+            remove_url: '@Url.Action("UpLoadRemove", "Upload")',
+            value: upvalue,
+            maxLength:@maxLength
+            });
+    })
+  
+</script>

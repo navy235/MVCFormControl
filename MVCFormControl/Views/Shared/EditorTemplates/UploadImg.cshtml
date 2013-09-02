@@ -1,0 +1,31 @@
+@model  string
+
+@{
+    var name = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var orgUrl = Url.Content("~/Content/images/noimages.gif");
+}
+
+<div class="field-uploadimg">
+    <div class="field-uploadimg-box">
+        <img src="@orgUrl" id="@(name + "_img")" />
+    </div>
+    @Html.TextBoxFor(m => m, new { tabindex = -1, @class = "field-valid-text", value = orgUrl })
+</div>
+<script type="text/javascript">
+    $(function () {
+        var upvalue;
+        @if (!string.IsNullOrEmpty(Model))
+        {
+            <text>
+        upvalue = '@Model';
+            </text>
+        }
+        jQuery("#@name").uploadImg({
+            default_url: '@Url.Content("~/content/images/noimages.gif")',
+            save_url: '@Url.Action("UpLoadSave", "Upload")',
+            uploadId: 'attachments',
+            remove_url: '@Url.Action("UpLoadRemove", "Upload")',
+            value: upvalue
+        })
+    })
+</script>

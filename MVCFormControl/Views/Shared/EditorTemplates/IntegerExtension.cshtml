@@ -1,0 +1,19 @@
+@model  int?
+@{
+    string name = ViewData.TemplateInfo.GetFullHtmlFieldId("");
+    var valuesRange = ViewData.ModelMetadata.AdditionalValues["IntegerExtension"].ToString().Split(',');
+    var minValue = Convert.ToInt32(valuesRange[0]);
+    var maxValue = Convert.ToInt32(valuesRange[1]);
+    var Unit = ViewData.ModelMetadata.AdditionalValues["IntegerExtensionUnit"];
+}
+
+<div class="field-integerextension">
+    @(Html.Kendo().IntegerTextBoxFor(m => m)
+      .Min(minValue)
+      .Max(maxValue)
+    )
+    @if (null != Unit)
+    {
+        <span class="price-unit">@Unit.ToString()</span>
+    }
+</div>

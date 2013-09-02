@@ -1,0 +1,120 @@
+﻿
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px/1.5 tahoma,arial,\5b8b\4f53;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.form-field {
+    padding: 0px 0 10px 120px;
+    line-height: 26px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    position: relative;
+}
+
+    .form-field .k-numerictextbox {
+        width: 60px;
+    }
+
+.field-label {
+    float: left;
+    width: 100px;
+    margin-left: -100px;
+    display: block;
+    overflow: hidden;
+    line-height: 26px;
+}
+
+.form-submit {
+    padding: 0px 0 10px 120px;
+    line-height: 26px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    position: relative;
+}
+
+.field-valid-text {
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+
+.field-hint-message,
+.field-validation-error {
+    left: 460px;
+    line-height: 26px;
+    padding: 0 10px 0 22px;
+    position: absolute;
+    top: 0px;
+    z-index: 550;
+}
+
+.field-hint-message {
+    background-color: #eff7fa;
+    border: solid 1px #52a4ca;
+    display: none;
+    background: url(images/information_16X16.png) 3px 4px no-repeat;
+    z-index: 551;
+}
+
+.field-prompt-message {
+    display: block;
+    color: gray;
+}
+
+.field-validation-error {
+    color: #f00;
+    background-color: #fbe3e4;
+    border: solid 1px #c13a3f;
+    display: block;
+    background: url(images/warning_16X16.png) 3px 4px no-repeat;
+}
+
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

@@ -1,0 +1,52 @@
+@model  bool
+
+@{
+    string name = ViewData.TemplateInfo.GetFullHtmlFieldId("");
+    List<SelectListItem> renderRadioList = new List<SelectListItem>();
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("RadioList"))
+    {
+        var list = ViewData.ModelMetadata.AdditionalValues["RadioList"].ToString().Split(',');
+        for (int i = 0; i < list.Length; i++)
+        {
+            SelectListItem item = new SelectListItem();
+            item.Text = list[i];
+            if (i == 0)
+            {
+                item.Value = "false";
+            }
+            else
+            {
+                item.Value = "true";
+            }
+            renderRadioList.Add(item);
+        }
+        if (Model)
+        {
+            renderRadioList[1].Selected = true;
+        }
+        else
+        {
+            renderRadioList[0].Selected = true;
+        }
+    }
+}
+<div class="k-checklist  k-form-checklist clearfix">
+    @for (int i = 0; i < renderRadioList.Count; i++)
+    {    
+        <span class="k-checklist-item">
+            <input type="radio" id="@(name + i.ToString())" name="@(name + "_radio")" value=@renderRadioList[i].Value checked="@renderRadioList[i].Selected" />
+            <label for="@(name + i.ToString())" class="radio" >
+                @renderRadioList[i].Text
+            </label>
+        </span>
+    }
+</div>
+
+@Html.TextBoxFor(m => m, new { tabindex = -1, @class = "field-valid-text" })
+
+<script type="text/javascript">
+    $(function () {
+        $('#@name').selectRadio({});
+    })
+</script>
+

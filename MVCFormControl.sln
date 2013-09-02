@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCFormControl", "MVCFormControl\MVCFormControl.csproj", "{724FD90A-E68B-429C-9B38-13DB11447CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCFormControl.Tests", "MVCFormControl.Tests\MVCFormControl.Tests.csproj", "{B51B70B2-5342-4765-86F4-92229CCEF43A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{724FD90A-E68B-429C-9B38-13DB11447CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724FD90A-E68B-429C-9B38-13DB11447CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724FD90A-E68B-429C-9B38-13DB11447CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724FD90A-E68B-429C-9B38-13DB11447CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51B70B2-5342-4765-86F4-92229CCEF43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51B70B2-5342-4765-86F4-92229CCEF43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51B70B2-5342-4765-86F4-92229CCEF43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51B70B2-5342-4765-86F4-92229CCEF43A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
