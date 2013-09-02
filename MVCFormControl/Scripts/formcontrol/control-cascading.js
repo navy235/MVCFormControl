@@ -29,8 +29,6 @@
 
       var data = {};
 
-      data[ps.paramId] = ps.value;
-
       container.on('change', 'select', onChange)
 
       function binding() {
@@ -46,8 +44,7 @@
             }
             getResponse(i, 0, ps.result[i]);
           }
-          //ps.value = ps.result[ps.result.length - 1];
-          //setValue(ps.value);
+          setValue(ps.values);
         }
       }
 
@@ -56,7 +53,7 @@
           if (res.length > 0) {
             createSelect(level + 1, res, defaultvalue);
           } else {
-            setValue(value);
+            setValue();
             validate();
           }
         })
@@ -139,7 +136,14 @@
       }
 
       function setValue(value) {
-        $('#' + id).val(value);
+        if (value) {
+          $('#' + id).val(value);
+        } else {
+          var values = $.map(container.find('select'), function (item) {
+            return $(item).val();
+          })
+          $('#' + id).val(values.join(','));
+        }
       }
       function clearValue() {
         $('#' + id).val('');
