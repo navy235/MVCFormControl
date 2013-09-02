@@ -118,3 +118,14 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+select {
+    height: 26px;
+    padding: 0px 0px 0px 0px;
+    line-height: 26px;
+    text-align: left;
+    border: 1px solid #D5D5D5;
+    display: inline;
+    outline: 0;
+    min-width: 120px;
+}
